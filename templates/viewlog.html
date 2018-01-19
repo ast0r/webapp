@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<table>
+    <tr><td>{{ the_log_msg}}</td></tr>
+</table>
+
+
+
+
+
+
+<form action="/entry">
+<p> <input type="submit" value="Back"/> </p>
+</form>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+<Request 'http://127.0.0.1:5000/search4' [POST]> {'u', 'a'}
+<Request 'http://127.0.0.1:5000/search4' [POST]> {'u', 'i', 'a', 'e'} fuck them all again
+<Request 'http://127.0.0.1:5000/search4' [POST]> {'e'}
+Request: set() | Result: <Request 'http://127.0.0.1:5000/search4' [POST]>
+Request: set() | Result: <Request 'http://127.0.0.1:5000/search4' [POST]>
+Request: {'a'} | Result: <Request 'http://127.0.0.1:5000/search4' [POST]>
+Request: {'i'} | Result: <Request 'http://127.0.0.1:5000/search4' [POST]>
+Request: {'a'} | Result: <Request 'http://127.0.0.1:5000/search4' [POST]>
+{'a'} <Request 'http://127.0.0.1:5000/search4' [POST]>
+<Request 'http://127.0.0.1:5000/search4' [POST]> set()
+<Request 'http://127.0.0.1:5000/search4' [POST]> {'e', 'a'}
+{'a'} <Request 'http://127.0.0.1:5000/search4' [POST]>
+<Request 'http://127.0.0.1:5000/search4' [POST]> {'a'}
+<Request 'http://127.0.0.1:5000/search4' [POST]> vadrwebgwhnrtn {'a', 'e'}
+<Request 'http://127.0.0.1:5000/search4' [POST]> World is my {'o', 'i'}
+<Request 'http://127.0.0.1:5000/search4' [POST]> dasdas {'a'}
