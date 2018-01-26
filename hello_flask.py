@@ -1,11 +1,30 @@
 from flask import Flask, render_template, request, escape
-import vowels2
+import vowels2, mysql.connector
 
 app = Flask(__name__)
 
 def log_request(req: 'flask_request', res: str) -> None:
-    with open('vsearch.log','a') as log:
-        print(req.form, req.remote_addr,req.user_agent,res, file = log, sep='|')
+    dbconfig = {'host': '127.0.0.1',
+                'user': 'vsearch',
+                'password': '2222',
+                'database': 'vsearchlogdb'}
+    conn = mysql.connector.connect(**dbconfig)
+    cursor = conn.cursor()
+    _SQL = """INSERT INTO log 
+            (phrase,letters,ip,browser_string,results)
+            VALUES 
+            (%s, %s, %s, %s, %s);"""
+    cursor.execute(_SQL,(req.form['phrase'],
+                         req.form['letters'],
+                         req.remote_addr,
+                         req.user_agent.browser,
+                         res,))
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+    #with open('vsearch.log','a') as log:
+     #   print(req.form, req.remote_addr,req.user_agent,res, file = log, sep='|')
 
 @app.route('/search4', methods=['POST'])
 def do_search() -> 'html':
@@ -25,6 +44,7 @@ def do_search() -> 'html':
 def entry_page() -> 'html':
     return render_template('entry.html' ,
                            the_title='Welcom to search4 on the web')
+
 @app.route('/viewlog')
 def view_the_log() -> 'html':
     content = []
